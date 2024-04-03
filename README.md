@@ -17,23 +17,20 @@ A continuación, se muestra un ejemplo básico de cómo utilizar Minidom para cr
 python
 from xml.dom import minidom
 
-# Crear un nuevo documento XML
+- Crear un nuevo documento XML
 doc = minidom.Document()
 
-# Crear un elemento raíz
+- Crear un elemento raíz
 root = doc.createElement('root')
 
-# Agregar atributos al elemento raíz
+- Agregar atributos al elemento raíz
 root.setAttribute('attr', 'value')
 
-# Agregar el elemento raíz al documento
+- Agregar el elemento raíz al documento
 doc.appendChild(root)
 
-# Generar el XML
-xml_str = doc.toprettyxml(indent='  ')
-print(xml_str)
-Este código crea un nuevo documento XML con un elemento raíz llamado 'root' y un atributo 'attr' con el valor 'value'. Luego, genera una representación en formato XML del documento.
-
+#### Enlace para mas información sobre minidom;
+[python minidom](https://docs.python.org/es/3.10/library/xml.dom.minidom.html)
 ## EJEMPLOS DOM
 Supongamos que tenemos el siguiente documento XML llamado example.xml:
 
@@ -108,120 +105,270 @@ Esta hoja de estilos XSLT toma un documento XML como entrada y genera un documen
 
 ## A continuación veremos un ejemplo de creacion de una tabla con un horario de clases de un xml con un xsl:
 ```xml
-<schedule>
-    <day name="Monday">
-        <class>
-            <time>09:00 - 10:30</time>
-            <subject>Mathematics</subject>
-            <room>Room 101</room>
-        </class>
-        <class>
-            <time>11:00 - 12:30</time>
-            <subject>History</subject>
-            <room>Room 102</room>
-        </class>
-    </day>
-    <day name="Tuesday">
-        <class>
-            <time>09:00 - 10:30</time>
-            <subject>Science</subject>
-            <room>Room 103</room>
-        </class>
-        <class>
-            <time>11:00 - 12:30</time>
-            <subject>English</subject>
-            <room>Room 104</room>
-        </class>
-    </day>
-    <day name="Wednesday">
-        <class>
-            <time>09:00 - 10:30</time>
-            <subject>Physics</subject>
-            <room>Room 105</room>
-        </class>
-        <class>
-            <time>11:00 - 12:30</time>
-            <subject>Geography</subject>
-            <room>Room 106</room>
-        </class>
-    </day>
-    <day name="Thursday">
-        <class>
-            <time>09:00 - 10:30</time>
-            <subject>Chemistry</subject>
-            <room>Room 107</room>
-        </class>
-        <class>
-            <time>11:00 - 12:30</time>
-            <subject>Physical Education</subject>
-            <room>Indoor Gym</room>
-        </class>
-    </day>
-    <day name="Friday">
-        <class>
-            <time>09:00 - 10:30</time>
-            <subject>Computer Science</subject>
-            <room>Computer Lab</room>
-        </class>
-        <class>
-            <time>11:00 - 12:30</time>
-            <subject>Art</subject>
-            <room>Art Room</room>
-        </class>
-    </day>
-</schedule>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="horario.xsl"?>
+<horari header="https://i.ibb.co/ykHW3gB/school.jpg">
+    <colors>
+        <!-- Pista: genera classes CSS que es diguin M01, M02, etc... -->
+        <color codi="M01">#ff9999</color>
+        <color codi="M02">#99ff99</color>
+        <color codi="M03">#9999ff</color>
+        <color codi="M04">#ffff99</color>
+        <color codi="M08">#cc99ff</color>
+        <color codi="M09">#ff99ff</color>
+        <color codi="M10">#ffcc99</color>
+        <color codi="M11">#99ffff</color>
+    </colors>
+    <links nom="Enllaços directes">
+        <!-- Pista: els hauràs d'ordenar pq a la imatge es veuen en un ordre diferent! -->
+        <link>
+            <nom>Moodle</nom>
+            <url>https://moodle.insjoaquimmir.cat/</url>
+        </link>
+        <link>
+            <nom>Institut Joaquim Mir</nom>
+            <url>https://agora.xtec.cat/iesjoaquimmir/</url>
+        </link>
+         <link>
+            <nom>Departament d'Educació</nom>
+            <url>https://educacio.gencat.cat/ca/inici</url>
+        </link>
+        <link>
+            <nom>IsardVDI</nom>
+            <url>https://pilotfp.gencat.isardvdi.com/login/joaquimmir</url>
+        </link>
+        <link>
+            <nom>IEduca</nom>
+            <url>https://joaquimmir.ieduca.com</url>
+        </link>
+    </links>
+    <setmana>
+        <!-- L'horari el pots fer amb <table> o fent servir flex -->
+        <dia nom="Dilluns">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Dimarts">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+        </dia>
+        <dia nom="Dimecres">
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Dijous">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M03</codi>
+                <nom>Programació</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M11</codi>
+                <nom>EIE</nom>
+            </modul>
+        </dia>
+        <dia nom="Divendres">
+            <modul>
+                <codi>M01</codi>
+                <nom>Sistemes Operatius</nom>
+            </modul>
+            <modul>
+                <codi>M02</codi>
+                <nom>Bases de Dades</nom>
+            </modul>
+            <modul>
+                <codi>M10</codi>
+                <nom>FOL</nom>
+            </modul>
+            <modul>
+                <codi>M08</codi>
+                <nom>Desplegament</nom>
+            </modul>
+            <modul>
+                <codi>M04</codi>
+                <nom>Marques</nom>
+            </modul>
+            <modul>
+                <codi>M09</codi>
+                <nom>Implantació</nom>
+            </modul>
+        </dia>
+    </setmana>
+</horari>
 ```
 ## Ahora veremos el xsl para dar formato a una tabla en html con un horario
 ```xsl
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-  <!-- Plantilla de inicio -->
-  <xsl:template match="/">
-    <html>
-      <head>
-        <title>Horario de Clases</title>
-        <style>
-          table {
-            width: 100%;
-            border-collapse: collapse;
-          }
-          th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Horario de Clases</h1>
-        <xsl:apply-templates/>
-      </body>
-    </html>
-  </xsl:template>
-
-  <!-- Plantilla para los días -->
-  <xsl:template match="day">
-    <h2><xsl:value-of select="@name"/></h2>
-    <table>
-      <tr>
-        <th>Hora</th>
-        <th>Materia</th>
-        <th>Aula</th>
-      </tr>
-      <xsl:apply-templates select="class"/>
-    </table>
-  </xsl:template>
-
-  <!-- Plantilla para las clases -->
-  <xsl:template match="class">
-    <tr>
-      <td><xsl:value-of select="time"/></td>
-      <td><xsl:value-of select="subject"/></td>
-      <td><xsl:value-of select="room"/></td>
-    </tr>
-  </xsl:template>
-
+    <xsl:output method="html" indent="yes"/>
+    <xsl:template match="/horari">
+        <head>
+            <style type="text/css">
+                table {
+                    width: 100%;
+                    border-collapse: separate;
+                    border-spacing: 5px;
+                }
+                th, td {
+                    border: 1px solid black;
+                    padding: 20px;
+                    text-align: center;
+                }
+                th {
+                    background-color: lightgray;
+                }
+                .M01, .M02, .M03, .M04, .M08, .M09, .M10, .M11 {
+                    position: relative;
+                    z-index: 1;
+                }
+                .M01 { background-color: #ff9999; }
+                .M02 { background-color: #99ff99; }
+                .M03 { background-color: #9999ff; }
+                .M04 { background-color: #ffff99; }
+                .M08 { background-color: #cc99ff; }
+                .M09 { background-color: #ff99ff; }
+                .M10 { background-color: #ffcc99; }
+                .M11 { background-color: #99ffff; }
+                .M01::after, .M02::after, .M03::after, .M04::after, .M08::after, .M09::after, .M10::after, .M11::after {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    background-color: inherit;
+                    z-index: -1;
+                }
+                ul {
+                    text-align: center;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            </style>
+        </head>
+        <html>
+            <body>
+                <img src="{@header}" width="auto"/>
+                <table>
+                    <tr>
+                        <xsl:for-each select="setmana/dia">
+                            <th>
+                                <xsl:value-of select="@nom"/>
+                            </th>
+                        </xsl:for-each>
+                    </tr>
+                    <tr>
+                        <xsl:for-each select="setmana/dia">
+                            <td>
+                                <xsl:for-each select="modul">
+                                    <p class="{codi}">
+                                        <xsl:value-of select="codi"/>
+                                        <xsl:text> - </xsl:text>
+                                        <xsl:value-of select="nom"/>
+                                    </p>
+                                </xsl:for-each>
+                            </td>
+                        </xsl:for-each>
+                    </tr>
+                </table>
+                <ul>
+                    <h1><xsl:value-of select="links/@nom"/></h1>
+                    <xsl:for-each select="links/link">
+                        <xsl:sort select="nom"/>
+                        <li>
+                            <a href="{url}">
+                                <xsl:value-of select="nom"/>
+                            </a>
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </body>
+        </html>
+    </xsl:template>
 </xsl:stylesheet>
 ```
+### Así es como quedaría el ejemplo anterior en una web;
+![Captura de pantalla 2024-04-03 194344](https://github.com/AAzorinM/xml-python/assets/165803047/66c74c93-57a5-4fbe-82f8-4bcc27f5d750)
