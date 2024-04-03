@@ -7,15 +7,15 @@ Minidom es un módulo en Python que proporciona una API de alto nivel para traba
 Características principales de Minidom
 Facilidad de uso: Minidom proporciona una interfaz fácil de entender y utilizar, lo que facilita trabajar con documentos XML en Python.
 
-Modelo de objetos de documento (DOM): Utiliza el modelo de objetos de documento (DOM) para representar documentos XML. Esto significa que los documentos XML se representan como un árbol de nodos, lo que permite acceder y manipular los elementos de manera programática.
+**Modelo de objetos de documento (DOM):** Utiliza el modelo de objetos de documento (DOM) para representar documentos XML. Esto significa que los documentos XML se representan como un árbol de nodos, lo que permite acceder y manipular los elementos de manera programática.
 
-Compatibilidad con estándares: Minidom cumple con los estándares XML DOM definidos por el World Wide Web Consortium (W3C), lo que garantiza la compatibilidad con otras herramientas y bibliotecas que trabajan con XML.
+**Compatibilidad con estándares:** Minidom cumple con los estándares XML DOM definidos por el World Wide Web Consortium (W3C), lo que garantiza la compatibilidad con otras herramientas y bibliotecas que trabajan con XML.
 
-Uso básico de Minidom
+**Uso básico de Minidom**
 A continuación, se muestra un ejemplo básico de cómo utilizar Minidom para crear un documento XML:
 
 python
-from xml.dom import minidom
+_from xml.dom import minidom_
 
 - Crear un nuevo documento XML
 doc = minidom.Document()
@@ -64,25 +64,25 @@ Este código abrirá el archivo XML example.xml, buscará todos los elementos <e
 El resultado esperado sería:
 
 makefile
-ID: 1
+_ID: 1
 Texto: Elemento 1
 ID: 2
 Texto: Elemento 2
 ID: 3
-Texto: Elemento 3
+Texto: Elemento 3_
 
 XSLT (Extensible Stylesheet Language Transformations)
 Introducción a XSLT
 XSLT es un lenguaje de transformación utilizado para convertir documentos XML en otros formatos, como HTML, XML o texto plano. Se utiliza principalmente para aplicar estilos y estructurar la presentación de los datos XML.
 
-Características principales de XSLT
+**Características principales de XSLT**
 Separación de datos y presentación: XSLT permite definir estilos y reglas de transformación de manera independiente de los datos, lo que facilita la creación de documentos con una presentación coherente.
 
-Extensibilidad: Se pueden definir funciones y extensiones personalizadas en XSLT para manipular los datos durante la transformación. Esto proporciona una gran flexibilidad para adaptar la transformación a las necesidades específicas del proyecto.
+**Extensibilidad:** Se pueden definir funciones y extensiones personalizadas en XSLT para manipular los datos durante la transformación. Esto proporciona una gran flexibilidad para adaptar la transformación a las necesidades específicas del proyecto.
 
-Basado en estándares: XSLT está basado en estándares XML definidos por el W3C, lo que garantiza la interoperabilidad y la compatibilidad con otras herramientas y tecnologías XML.
+**Basado en estándares:** XSLT está basado en estándares XML definidos por el W3C, lo que garantiza la interoperabilidad y la compatibilidad con otras herramientas y tecnologías XML.
 
-Uso básico de XSLT
+**Uso básico de XSLT**
 A continuación, se muestra un ejemplo básico de una hoja de estilos XSLT que transforma un documento XML en HTML:
 
 ```xml
